@@ -1,5 +1,34 @@
 "use strict";
 
+// DOMContentLoaded
+// document.addEventListener('DOMContentLoaded',() => {
+//   setInterval(() => {
+//     let target = currentIndex + 1;
+//     if (target === images.length) {
+//       target = 0;
+//     }
+//     document.querySelectorAll('.carousel__thumbnails > li')[target].click();
+//     console.log(currentIndex);
+//   }, 2000);
+// });
+
+window.addEventListener('load',() => {
+  //setInterval(() => {}, 1000 * 60 * 60 * 24 ), //1000=1秒 10秒 1分
+  setInterval(() => {
+  let target = currentIndex + 1;
+    if (target === images.length) {
+      target = 0;
+    }
+    document.querySelectorAll('.carousel__thumbnails > li')[target].click();
+  }, 2000);
+});
+
+//即時関数 以前はvar 現在はlet const 
+(function immediate(){
+  console.log('即時関数です');
+})();
+
+
 const images = [
   "images/image000.jpg",
   "images/image001.jpg",
