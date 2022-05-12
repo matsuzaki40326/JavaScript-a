@@ -16,36 +16,46 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="grand-father">
-    <div id="parent">
-      <div id="target">
-        自分
-      </div>
-    </div>
-  </div>
-  <div id="divList">
-    <div class="div1">テスト1</div>
-    <div class="div2">テスト2</div>
-    <div class="div3">テスト3</div>
-  </div>
+  <!-- イベントハンドラー(関数) 上書き(1つだけ)
+  1.<button onclick = "function()">
+  2.document.getElementById().onclick = function();
+
+  イベントリスナー 追加(複数登録できる)
+  3.el.addEventListener('click', callback); -->
+
+
+
+  <div id="test"></div>
+  <button id="target">押してね</button>
+
   <script>
+    // 1つ目 HTMLタグにonclickと設定する
+    // function change_color(){
+      // const test = document.getElementById('test');
+      // test.textContent = 'テスト';
+      // test.classList.add('red');
+    // };
+
+    
+    
+    // 2つ目 JSで設定 Element.onclick
+    // document.getElementById('target').onclick = function(){
+    //   const test = document.getElementById('test');
+    //   test.textContent = 'テスト';
+    //   test.classList.add('red');
+    // };
+
+
+
+    // 3つ目 イベントリスナー
     const target = document.getElementById('target');
-    const newDiv = document.createElement('div');
-    newDiv.id = 'test';
-    newDiv.textContent = 'テスト';
-    newDiv.classList.add('red');
-    // target.appendChild(newDiv); 下の階層に要素ができる
-    target.parentNode.appendChild(newDiv);
+    target.addEventListener('click', () => {
+      const test = document.getElementById('test');
+      test.textContent = 'テスト';
+      test.classList.add('red');
+    });
 
-    const targetList = document.getElementById('divList').firstElementChild;
-    const reference = document.querySelector('.div1').nextElementSibling;
-    console.log(targetList);
-
-    const newElement = document.createElement('div');
-
-    newElement.classList.add('div4');
-    newElement.textContent = '追加分';
-    targetList.insertBefore(newElement, reference)
+    
   </script>
 </body>
 </html>
