@@ -16,25 +16,36 @@
   <title>Document</title>
 </head>
 <body>
-  <input id="test">あああ
-  <!-- 属性 attribute -->
-
+  <div id="grand-father">
+    <div id="parent">
+      <div id="target">
+        自分
+      </div>
+    </div>
+  </div>
+  <div id="divList">
+    <div class="div1">テスト1</div>
+    <div class="div2">テスト2</div>
+    <div class="div3">テスト3</div>
+  </div>
   <script>
-   const input = document.getElementById('test');
-   // Element
-   input.type = 'text';
-   input.placeholder = 'あああ';
-   input.name = 'test';
-   input.textContent = 'テストです';
-  //  input.setAttribute('type', 'text')
-   console.log(input);
+    const target = document.getElementById('target');
+    const newDiv = document.createElement('div');
+    newDiv.id = 'test';
+    newDiv.textContent = 'テスト';
+    newDiv.classList.add('red');
+    // target.appendChild(newDiv); 下の階層に要素ができる
+    target.parentNode.appendChild(newDiv);
 
-   const anchor = document.createElement('a');
-   console.log(anchor);
-   anchor.href = 'https://google.com';
-   anchor.target = '_blank';
-   anchor.aaa = 'いいい';
+    const targetList = document.getElementById('divList').firstElementChild;
+    const reference = document.querySelector('.div1').nextElementSibling;
+    console.log(targetList);
 
+    const newElement = document.createElement('div');
+
+    newElement.classList.add('div4');
+    newElement.textContent = '追加分';
+    targetList.insertBefore(newElement, reference)
   </script>
 </body>
 </html>
