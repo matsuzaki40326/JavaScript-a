@@ -15,10 +15,11 @@
 window.addEventListener('load',() => {
   //setInterval(() => {}, 1000 * 60 * 60 * 24 ), //1000=1秒 10秒 1分
   setInterval(() => {
-  let target = currentIndex + 1;
-    if (target === images.length) {
-      target = 0;
-    }
+  // let target = currentIndex + 1;
+  let target = Math.floor(Math.random() * images.length);
+    // if (target === images.length) {
+    //   target = 0;
+    // }
     document.querySelectorAll('.carousel__thumbnails > li')[target].click();
   }, 2000);
 });
@@ -28,6 +29,9 @@ window.addEventListener('load',() => {
   console.log('即時関数です');
 })();
 
+for(let i = 0; i < 10; i++){
+  console.log(Math.floor(Math.random() * 7));
+}
 
 const images = [
   "images/image000.jpg",
