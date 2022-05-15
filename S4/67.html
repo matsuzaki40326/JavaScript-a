@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch</title>
+</head>
+<body>
+  <script>
+    url = 'https://dog.ceo/api/breeds/image/random';
+    // 短期集中アクセスはNG 1~2秒は間隔を空けながら使う
+
+    const options = {
+      method: 'GET'
+    };
+    const fetchTest1 = fetch(url,options);
+    console.log(fetchTest1);
+    // 返り値はPromise
+    // この状態では中身が確認できない
+
+    // APIがJSONで取得できるなら response.json()でパースする
+    // パース・・・JSON形式をオブジェクトに変換すること
+    const fetchTest2 = fetch(url,options)
+    .then(response => response.json());
+    console.log(fetchTest2);
+
+  </script>
+</body>
+</html>
