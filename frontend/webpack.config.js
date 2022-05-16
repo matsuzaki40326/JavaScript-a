@@ -10,6 +10,16 @@ module.exports = {
     rules: [
       { test: /\.(sass|scss)$/,
         use: ['style-loader','css-loader','sass-loader'] //後ろから実行される
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ],
   },
