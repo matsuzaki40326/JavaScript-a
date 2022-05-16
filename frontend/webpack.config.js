@@ -8,8 +8,8 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.css$/,
-        use: ['style-loader','css-loader'] //後ろから実行される
+      { test: /\.(sass|scss)$/,
+        use: ['style-loader','css-loader','sass-loader'] //後ろから実行される
       }
     ],
   },
