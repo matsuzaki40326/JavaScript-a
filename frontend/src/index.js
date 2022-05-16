@@ -1,6 +1,11 @@
 import './style.scss'
 require('intersection-observer');
 import 'whatwg-fetch';
+const moment = require('moment');
+
+console.log(moment().format());
+console.log(moment().year());
+console.log(moment().format('YYYY-MM-DD'));
 
 console.log('webpackテストです');
 // window.addEventListener('load', () => {
